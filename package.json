@@ -27,6 +27,8 @@
     "slick-carousel": "^1.8.1",
     "web-vitals": "^2.1.4"
   },
+
+  "homepage": "https://LynNyandoro.github.io/Eight2Eight-Web/",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
