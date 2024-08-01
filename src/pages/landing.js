@@ -14,7 +14,7 @@ import {
   useColorModeValue,
   Icon,
 } from "@chakra-ui/react";
-import vid from "../assets/Content/Vid.mp4";
+import vid from "../assets/Content/828VID.mp4";
 import cover from '../assets/Content/cover.png'
 
 export default function Landing() {
