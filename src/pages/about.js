@@ -11,7 +11,6 @@ import {
   useColorModeValue,
   Box,
 } from "@chakra-ui/react";
-import main from '../assets/Content/Head.png';
 import { SiFsecure } from "react-icons/si";
 import { VscWorkspaceTrusted } from "react-icons/vsc";
 import { HiOutlineBadgeCheck } from "react-icons/hi";
@@ -50,6 +49,9 @@ const Card = ({ heading, icon }) => {
 }
 
 const About = () => {
+  const companyName = process.env.REACT_APP_COMPANY_NAME;
+  const mainImage = process.env.REACT_APP_MAIN_IMAGE;
+
   return (
     <Container maxW={"8xl"} py={12}>
       <SimpleGrid columns={{ base: 1, md: 2 }} spacing={10}>
@@ -57,7 +59,7 @@ const About = () => {
           <Image
             rounded={"md"}
             alt={"feature image"}
-            src={main}
+            src={mainImage}
             objectFit={"cover"}
             w="100%"
             h="auto"
@@ -76,7 +78,9 @@ const About = () => {
           >
             Our Story
           </Text>
-          <Heading color={"#363795"} fontSize={"3xl"}>Branding & Media Experts</Heading>
+          <Heading color={"#363795"} fontSize={"3xl"}>
+            Branding & Media Experts at {companyName}
+          </Heading>
           <Text color={"gray.600"} >
             Eight2Eight Media is a branding company which specializes in Branding, Printing, Packaging and more. The name ‘Eight2Eight’ is influenced by the scripture Romans 8 vs 28 - “All things will work together for good, for those who love the Lord and are called to His Promise”.
           </Text>
