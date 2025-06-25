@@ -11,16 +11,25 @@ import rout from './pages/Router';
 
 function App() {
   return (
-    <div className="App">
-      <rout/>
-      <Nav/>
-      <Main/>
-      <Landing/>
-      <About/>
-      <Experts/>
-      <Service/>
-      <Sub/>
-      <Footer/>
+    <div
+      className="App"
+      style={{
+        backgroundColor: '#fff',
+        minHeight: '100vh',
+        width: '100%',
+        boxSizing: 'border-box',
+        padding: '0',
+        margin: '0',
+      }}
+    >
+      <Nav />
+      <Main />
+      <Landing />
+      <About />
+      <Experts />
+      <Service />
+      <Sub />
+      <Footer />
     </div>
   );
 }

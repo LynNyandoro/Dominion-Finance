@@ -29,7 +29,7 @@ export default function Nav() {
   return (
     <Box>
       <Flex
-        bg={useColorModeValue("white", "gray.800")}
+        bg={useColorModeValue("white")}
         color={useColorModeValue("gray.600", "white")}
         minH={"60px"}
         py={{ base: 2 }}
@@ -111,9 +111,10 @@ const DesktopNav = () => {
                 fontSize={"m"}
                 fontWeight={500}
                 color={"#363795"}
+                transition="transform 0.2s"
                 _hover={{
                   textDecoration: "none",
-                  color: linkHoverColor
+                  transform: "scale(1.08)" // Slightly enlarge on hover
                 }}
               >
                 {navItem.label}
@@ -124,7 +125,7 @@ const DesktopNav = () => {
               <PopoverContent
                 border={0}
                 boxShadow={"xl"}
-                bg={popoverContentBgColor}
+                bg="white" // Force white background
                 p={4}
                 rounded={"xl"}
                 minW={"sm"}

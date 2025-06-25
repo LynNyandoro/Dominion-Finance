@@ -35,7 +35,9 @@ const Card = ({ heading, icon }) => {
           justify={"center"}
           color={"white"}
           rounded={"full"}
-          bg={useColorModeValue("gray.100", "gray.700")}
+          border={"2px solid"}
+          borderColor={useColorModeValue("#363795", "#363795")}
+          bg={useColorModeValue("white")}
         >
           {icon}
         </Flex>

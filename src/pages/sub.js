@@ -6,7 +6,7 @@ export default function Sub() {
   return (
     <Flex
       w={'100%'}
-      h={'70vh'}
+      h={'40vh'}
       maxH={'7xl'}
       backgroundImage={
         'url(https://i.pinimg.com/564x/fb/3c/7f/fb3c7fd4a55f7fc629d5f0e52204000f.jpg)'

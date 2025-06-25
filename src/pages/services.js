@@ -81,21 +81,21 @@ const ServiceCard = ({ title, image, items, link }) => (
       <Box
         maxW={'110%'}
         w={'full'}
-        bg={useColorModeValue('white', 'gray.800')}
+        bg={useColorModeValue('white')}
         boxShadow={'0 4px 6px rgba(0, 0, 0, 0.1)'}
         rounded={'md'}
         overflow={'hidden'}
         p={4}
       >
         <Stack textAlign={'center'} p={6} color={useColorModeValue('gray.800', 'white')} align={'center'}>
-          <Text fontSize={'m'} fontWeight={500} bg={useColorModeValue("rgba(54, 55, 149, 0.1)", "rgba(35, 33, 93, 0.1)")} p={2} px={3} color={"#363795"} rounded={'full'}>
+          <Text fontSize={'m'} fontWeight={500} bg={useColorModeValue("white")} p={2} px={3} color={"#363795"} rounded={'full'}>
             {title}
           </Text>
           <Stack direction={'row'} align={'center'} justify={'center'}>
             <img src={image} alt={title} style={{ borderRadius: '8px', width: '150px', height: '150px' }} />
           </Stack>
         </Stack>
-        <Box bg={useColorModeValue('gray.50', 'gray.600')} px={6} py={10}>
+        <Box bg={useColorModeValue('gray.50')} px={6} py={10}>
           <List fontSize={'sm'} color={"gray.600"} spacing={3}>
             {items.map((item, index) => (
               <ListItem key={index}>

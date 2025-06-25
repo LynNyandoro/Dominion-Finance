@@ -25,7 +25,8 @@ const Logo = props => {
 const SocialButton = ({ children, label, href }) => {
   return (
     <chakra.button
-      bg={useColorModeValue("blackAlpha.100", "whiteAlpha.100")}
+      bg="#363795" // Dark background
+      color="white" // White icon
       rounded={"full"}
       w={8}
       h={8}
@@ -37,7 +38,7 @@ const SocialButton = ({ children, label, href }) => {
       justifyContent={"center"}
       transition={"background 0.3s ease"}
       _hover={{
-        bg: useColorModeValue("blackAlpha.200", "whiteAlpha.200")
+        bg: "#23215D" // Slightly darker on hover
       }}
     >
       <VisuallyHidden>{label}</VisuallyHidden>
@@ -57,7 +58,7 @@ const ListHeader = ({ children }) => {
 export default function Footer() {
   return (
     <Box
-      bg={useColorModeValue("gray.50", "gray.900")}
+      bg={useColorModeValue("gray.50")}
       color={useColorModeValue("gray.700", "gray.200")}
     >
       <Container as={Stack} maxW={"6xl"} py={6}>
@@ -71,7 +72,7 @@ export default function Footer() {
               © 2024 Eight2Eight Media. All rights reserved
             </Text>
             <Stack direction={"row"} spacing={6}>
-              <SocialButton label={"Whatsapp"} href={"https://wa.me/263788638544?text=urlencodedtext"}>
+              <SocialButton color={'gray.600'} label={"Whatsapp"} href={"https://wa.me/263788638544?text=urlencodedtext"}>
                 <FaWhatsapp />
               </SocialButton>
               <SocialButton label={"Facebook"} href={"https://www.facebook.com/profile.php?id=61551784531116&mibextid=LQQJ4d"}>
