@@ -28,7 +28,7 @@
     "web-vitals": "^2.1.4"
   },
 
-  "homepage": "https://LynNyandoro.github.io/Eight2Eight-Web/",
+  "homepage": ".",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
