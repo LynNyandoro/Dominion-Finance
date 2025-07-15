@@ -1,15 +1,20 @@
-import React from 'react';
-import Nav from './pages/nav'
-import Landing from './pages/landing';
+import React, { useRef } from "react";
+import Nav from './pages/nav';
+import Home from './pages/home';
 import About from './pages/about';
 import Footer from './pages/footer';
-import Main from './pages/maincarousel';
 import Service from './pages/services';
-import Experts from './pages/expertise';
+import Clients from './pages/clients';
 import Sub from './pages/sub';
-import rout from './pages/Router';
+import Diaspora from "./pages/diaspora";
+import Teams from "./pages/team";
+import Blog from "./pages/blog";
+import Faqs from "./pages/faqs";
 
 function App() {
+  const contactUsRef = useRef(null); // Create a reference for Footer
+  const serviceRef = useRef(null); // Create a reference for Service
+
   return (
     <div
       className="App"
@@ -22,14 +27,24 @@ function App() {
         margin: '0',
       }}
     >
-      <Nav />
-      <Main />
-      <Landing />
+      <Nav contactUsRef={contactUsRef} />  {/* Pass the reference to Nav */}
+      {/* <Main /> */}
+      <Home serviceRef={serviceRef} />
       <About />
-      <Experts />
-      <Service />
+      <Service  ref={serviceRef} />
+      <Diaspora />
+      {/* <Experts /> */}
+      {/* <Sub /> */}
+      {/* <Footer ref={contactUsRef} />  Remove Footer reference for now */}
+      <Clients />
+      <Teams />
+      <Blog />
+      {/* <Experts /> */}
+      {/* <Sub /> */}
+      <Faqs />
+      {/* <Footer ref={contactUsRef} />  Uncomment to include Footer */}
       <Sub />
-      <Footer />
+      <Footer ref={contactUsRef} />  {/* Pass the reference to Footer */}
     </div>
   );
 }

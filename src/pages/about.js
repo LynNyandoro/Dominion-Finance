@@ -11,10 +11,11 @@ import {
   useColorModeValue,
   Box,
 } from "@chakra-ui/react";
-import { SiFsecure } from "react-icons/si";
 import { VscWorkspaceTrusted } from "react-icons/vsc";
-import { HiOutlineBadgeCheck } from "react-icons/hi";
-import { HiOutlineLightBulb } from "react-icons/hi";
+import { PiHandFistLight } from "react-icons/pi";
+import { LiaHandshake } from "react-icons/lia";
+import { PiRecycle } from "react-icons/pi";
+import about from "../assets/Content/about.png";
 
 const Card = ({ heading, icon }) => {
   return (
@@ -35,13 +36,13 @@ const Card = ({ heading, icon }) => {
           color={"white"}
           rounded={"full"}
           border={"2px solid"}
-          borderColor={useColorModeValue("#363795", "#363795")}
+          borderColor={useColorModeValue("#F39C12", "#F39C12")}
           bg={useColorModeValue("white")}
         >
           {icon}
         </Flex>
         <Box mt={2}>
-          <Heading color={"#363795"} size="sm">{heading}</Heading>
+          <Heading color={"#4A2900"} fontSize={{ base: "md", md: "lg", lg: "xl" }}>{heading}</Heading>
         </Box>
       </Stack>
     </Box>
@@ -49,79 +50,76 @@ const Card = ({ heading, icon }) => {
 }
 
 const About = () => {
-  const companyName = process.env.REACT_APP_COMPANY_NAME;
-  const mainImage = process.env.REACT_APP_MAIN_IMAGE;
 
   return (
-    <Container maxW={"8xl"} py={12}>
+    <Container maxW={"90%"} py={12}>
       <SimpleGrid columns={{ base: 1, md: 2 }} spacing={10}>
         <Flex>
-          <Image
-            rounded={"md"}
-            alt={"feature image"}
-            src={mainImage}
-            objectFit={"cover"}
-            w="100%"
-            h="auto"
-          />
+          <img src={about} alt="logo" style={{ borderRadius: '1px', width: '90%' }} />
         </Flex>
-        <Stack spacing={6}>
+        <Stack spacing={5}>
           <Text
             textTransform={"uppercase"}
-            color={"#363795"}
+            color={"#4A2900"}
             fontWeight={600}
-            fontSize={"sm"}
-            bg={useColorModeValue("rgba(54, 55, 149, 0.1)", "rgba(35, 33, 93, 0.1)")}
+            fontSize={'2xl'}
+            bg={useColorModeValue("#f4e6cd", "#f4e6cd")}
             p={2}
             alignSelf={"flex-start"}
             rounded={"md"}
           >
             Our Story
           </Text>
-          <Heading color={"#363795"} fontSize={"3xl"}>
-            Branding & Media Experts at {companyName}
+          <Heading color={"#E67E22"} fontSize={"4xl"}>
+            Local Expertise, Global Vision
           </Heading>
-          <Text color={"gray.600"} >
-            Eight2Eight Media is a branding company which specializes in Branding, Printing, Packaging and more. The name ‘Eight2Eight’ is influenced by the scripture Romans 8 vs 28 - “All things will work together for good, for those who love the Lord and are called to His Promise”.
+          <Text fontSize={'xl'} color={"#111111"} >
+            Dominion Financial Management Services is a division of Dominion Group, a Zimbabwean consultancy firm established in 2002. We deliver reliable, cost-effective accounting and advisory solutions to businesses across Africa and the diaspora.<br/><br/>
+            We operate through two key entities:
+            <ul style={{ marginLeft: "1em" }}>
+              <li>Busy People Training Services (2006)</li>
+              <li>Dominion Accounting Services (Pvt) Ltd (2006)</li>
+            </ul>
           </Text>
           <Stack spacing={6}>
             <Box>
-              <Heading fontSize={'2xl'} color={"#363795"} fontFamily={'body'}>
+              <Heading fontSize={'3xl'} color={"#E67E22"} fontFamily={'body'}>
                 Our Mission:
               </Heading>
-              <Text color={'gray.600'}>
-                To transform ideas into innovative brands which empower businesses to stand out and thrive.
+              <Text fontSize={'xl'} color={'#111111'}>
+                To provide world – class training and accounting services. To position our clients to form and manage trans-generational organizations. 
+                To equip our clients to establish a dominant presence on the continent of Africa
               </Text>
             </Box>
             <Box>
-              <Heading fontSize={'2xl'} color={"#363795"} fontFamily={'body'}>
+              <Heading fontSize={'3xl'} color={"#E67E22"} fontFamily={'body'}>
                 Our Vision
               </Heading>
-              <Text color={'gray.600'}>
-                To be the leading branding and media company in Zimbabwe - offering quality and affordable services for all businesses from Small & Medium Enterprises to Big Companies, elevating them to achieve enduring success and exposure.
+              <Text fontSize={'xl'} color={'#111111'}>
+                To empower Africa for sustainability.
               </Text>
             </Box>
             <Box>
-              <Heading fontSize={'2xl'} color={"#363795"} fontFamily={'body'}>
+              <Heading fontSize={'3xl'} color={"#E67E22"} fontFamily={'body'}>
                 Our Values
               </Heading>
-              <Container maxW={"7xl"} mt={12}>
+              <Container maxW={"100%"}>
                 <SimpleGrid columns={{ base: 1, md: 2, lg: 4 }} spacing={6}>
                   <Card
-                    heading={"Reliability"}
-                    icon={<Icon color={"#363795"} as={SiFsecure} w={'50%'} h={'50%'} />}
-                  />
-                  <Card
                     heading={"Integrity"}
-                    icon={<Icon color={"#363795"} as={VscWorkspaceTrusted} w={'50%'} h={'50%'} />}
+                    icon={<Icon color={"#F39C12"} as={VscWorkspaceTrusted} w={'50%'} h={'50%'} />}
                   />
                   <Card
-                    heading={"Quality"}
-                    icon={<Icon color={"#363795"} as={HiOutlineBadgeCheck} w={'50%'} h={'50%'} />}
+                    heading={"Empowerment"}
+                    icon={<Icon color={"#F39C12"} as={PiHandFistLight} w={'70%'} h={'70%'} />}
                   />
                   <Card
-                    heading={"Creativity"}
-                    icon={<Icon color={"#363795"} as={HiOutlineLightBulb} w={'50%'} h={'50%'} />}
+                    heading={"Commitment"}
+                    icon={<Icon color={"#F39C12"} as={LiaHandshake} w={'60%'} h={'60%'} />}
+                  />
+                  <Card
+                    heading={"Sustainability"}
+                    icon={<Icon color={"#F39C12"} as={PiRecycle} w={'50%'} h={'50%'} />}
                   />
                 </SimpleGrid>
               </Container>

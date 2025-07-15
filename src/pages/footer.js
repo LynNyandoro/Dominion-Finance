@@ -1,107 +1,119 @@
-"use client"
+import React, { forwardRef } from "react";
 import {
   Box,
-  chakra,
+  Button,
   Container,
-  SimpleGrid,
   Stack,
   Text,
   VisuallyHidden,
-  Input,
-  IconButton,
   useColorModeValue,
-  Heading
-} from "@chakra-ui/react"
-import { FaInstagram, FaFacebook, FaWhatsapp } from "react-icons/fa"
-import { TfiEmail } from "react-icons/tfi";
-import logo from '../assets/logos/Hlogo.png'
+} from "@chakra-ui/react";
+import logo from "../assets/logos/logo.png";
 
-const Logo = props => {
-  return ( 
-    <img src={logo} alt="logo" style={{ borderRadius: '1px', height: '40px' }}/>
-  )
-}
+// Logo component
+const Logo = () => (
+  <img
+    src={logo}
+    alt="logo"
+    style={{ borderRadius: "1px", height: "40px" }}
+  />
+);
 
-const SocialButton = ({ children, label, href }) => {
-  return (
-    <chakra.button
-      bg="#363795" // Dark background
-      color="white" // White icon
-      rounded={"full"}
-      w={8}
-      h={8}
-      cursor={"pointer"}
-      as={"a"}
-      href={href}
-      display={"inline-flex"}
-      alignItems={"center"}
-      justifyContent={"center"}
-      transition={"background 0.3s ease"}
-      _hover={{
-        bg: "#23215D" // Slightly darker on hover
-      }}
-    >
-      <VisuallyHidden>{label}</VisuallyHidden>
-      {children}
-    </chakra.button>
-  )
-}
+// Social button component
+const SocialButton = ({ children, label, href }) => (
+  <Button
+    bg="#363795"
+    color="white"
+    rounded="full"
+    w={8}
+    h={8}
+    as="a"
+    href={href}
+    display="inline-flex"
+    alignItems="center"
+    justifyContent="center"
+    transition="background 0.3s ease"
+    _hover={{ bg: "#23215D" }}
+  >
+    <VisuallyHidden>{label}</VisuallyHidden>
+    {children}
+  </Button>
+);
 
-const ListHeader = ({ children }) => {
-  return (
-    <Text fontWeight={"500"} fontSize={"lg"} mb={2}>
-      {children}
-    </Text>
-  )
-}
-
-export default function Footer() {
+// Footer component
+const Footer = forwardRef((props, ref) => {
   return (
     <Box
+      maxW="100%"
       bg={useColorModeValue("gray.50")}
       color={useColorModeValue("gray.700", "gray.200")}
     >
-      <Container as={Stack} maxW={"6xl"} py={6}>
-          <SimpleGrid ml={10} columns={{ base: 1, md: 2 }} spacing={20}
+      <Container ref={ref} as={Stack} py={6} maxW="90%">
+        <Stack
+          direction={{ base: "column", md: "row" }} // VStack on mobile, HStack on larger screens
+          spacing={{ base: 8, md: "14%" }}
+          align="flex-start"
         >
-          <Stack spacing={6}>
-            <Box>
-              <Logo color={useColorModeValue("gray.700", "white")} />
-            </Box>
-            <Text color={'gray.600'} fontSize={"sm"}>
-              © 2024 Eight2Eight Media. All rights reserved
-            </Text>
-            <Stack direction={"row"} spacing={6}>
-              <SocialButton color={'gray.600'} label={"Whatsapp"} href={"https://wa.me/263788638544?text=urlencodedtext"}>
-                <FaWhatsapp />
-              </SocialButton>
-              <SocialButton label={"Facebook"} href={"https://www.facebook.com/profile.php?id=61551784531116&mibextid=LQQJ4d"}>
-                <FaFacebook/>
-              </SocialButton>
-              <SocialButton label={"Instagram"} href={"https://www.instagram.com/eight2eightmedia_zw?igsh=MXI5dDB6M3p6enhsYw%3D%3D&utm_source=qr"}>
-                <FaInstagram />
-              </SocialButton>
-              <SocialButton label={"Email"} href={"mailto:eight28mediazw@gmail.com"}>
-                <TfiEmail />
-              </SocialButton>
+          {/* Company Info */}
+          <Stack spacing={3}>
+            <Stack direction="row" spacing={3} align="center">
+              <img
+                src={logo}
+                alt="logo"
+                style={{ borderRadius: "1px", width: "30px" }}
+              />
+              <Text
+                fontSize={{ base: "sm", md: "md", lg: "xl" }}
+                fontWeight="bold"
+                color="#4A2900"
+              >
+                Dominion Financial Management Services
+              </Text>
             </Stack>
+            <Text color="#111111" fontSize={{ base: "xs", md: "sm", lg: "xl" }}>
+              © 2025 Dominion Finance. All Rights Reserved.
+            </Text>
           </Stack>
-          <Stack align={"flex-start"}>
-            <Heading color={"#363795"}>Contact Us</Heading>
-            <Box color={'gray.500'} as="a" href={"#"}>
-            +263 78 863 8544
-            </Box>
-            <Box color={'gray.500'} as="a" href={"#"} 
-            target="_blank"  
-            rel="noopener noreferrer">
-              eight28mediazw@gmail.com
-            </Box>
-            <Box color={'gray.500'} as="a" href={"#"}>
-              Harare, Zimbabwe
-            </Box>
+
+          {/* Address */}
+          <Stack align="flex-start">
+            <Text
+              fontSize={{ base: "xs", md: "sm", lg: "xl" }}
+              color="#111111"
+              as="a"
+              href="#"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <b>Business Address:</b>
+              <br />
+              4 Kirkaldy Road, Pomona, Harare, Zimbabwe
+              <br />
+              <b>Working Hours:</b> Mon–Fri, 8am–4:30pm
+            </Text>
           </Stack>
-        </SimpleGrid>
+
+          {/* Contact Info */}
+          <Stack align="flex-start">
+            <Text
+              fontSize={{ base: "sm", md: "md", lg: "xl" }}
+              color="#111111"
+              as="a"
+              href="#"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <b>Get in Touch:</b>
+              <br />
+              info@dominionfinance.org
+              <br />
+              (+263) 77 542 4146
+            </Text>
+          </Stack>
+        </Stack>
       </Container>
     </Box>
-  )
-}
+  );
+});
+
+export default Footer;

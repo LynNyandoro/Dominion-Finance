@@ -1,4 +1,4 @@
-import React from 'react';
+
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import {
@@ -15,47 +15,61 @@ import {
   Heading
 } from '@chakra-ui/react';
 import { CheckIcon } from '@chakra-ui/icons';
-import brand from '../assets/Content/brand.jpeg'
-import other from '../assets/Content/other.PNG'
-import gd from '../assets/Content/gd.PNG'
-import pkg from '../assets/Content/pkgin.png'
-import printing from '../assets/Content/print.jpeg'
+import logo from '../assets/logos/logo.png';
+import React, { forwardRef } from 'react';
+import audit from '../assets/Content/audit.jpeg';
+import ba from '../assets/Content/ba.jpeg';
+import bk from '../assets/Content/bk.jpeg';
+import fl from '../assets/Content/fl.jpeg';
+import fr from '../assets/Content/fr.jpeg';
+import payroll from '../assets/Content/payroll.jpeg';
+import st from '../assets/Content/st.jpeg';
+import tax from '../assets/Content/taxx.jpeg';
+import vCFO from '../assets/Content/vcfo.jpg';
+import zimra from '../assets/Content/zimra.jpeg';
 
-const CustomRightArrow = ({ onClick }) => (
-  <Button
-    onClick={onClick}
-    style={{
-      position: 'absolute',
-      right: 0,
-      top: '50%',
-      transform: 'translateY(-50%)',
-      backgroundColor: useColorModeValue("rgba(54, 55, 149, 0.5)", "rgba(35, 33, 93, 0.5)"),
-      color: 'white',
-      borderRadius: '50%',
-      padding: '10px',
-    }}
-  >
-    →
-  </Button>
-);
+const CustomRightArrow = ({ onClick }) => {
+  const bgColor = useColorModeValue("#E67E22", "#E67E22");
 
-const CustomLeftArrow = ({ onClick }) => (
-  <Button
-    onClick={onClick}
-    style={{
-      position: 'absolute',
-      left: 0,
-      top: '50%',
-      transform: 'translateY(-50%)',
-      backgroundColor: useColorModeValue("rgba(54, 55, 149, 0.5)", "rgba(35, 33, 93, 0.5)"),
-      color: 'white',
-      borderRadius: '50%',
-      padding: '10px',
-    }}
-  >
-    ←
-  </Button>
-);
+  return (
+    <Button
+      onClick={onClick}
+      position="absolute"
+      right={0}
+      top="50%"
+      transform="translateY(-50%)"
+      bg={bgColor}
+      _hover={{ bg: "#F39C12" }}
+      color="white"
+      borderRadius="50%"
+      p="10px"
+    >
+      →
+    </Button>
+  );
+};
+
+const CustomLeftArrow = ({ onClick }) => {
+  const bgColor = useColorModeValue("#E67E22", "#E67E22");
+
+  return (
+    <Button
+      onClick={onClick}
+      position="absolute"
+      left={0}
+      top="50%"
+      transform="translateY(-50%)"
+      bg={bgColor}
+      _hover={{ bg: "#F39C12" }}
+      color="white"
+      borderRadius="50%"
+      p="10px"
+    >
+      ←
+    </Button>
+  );
+};
+
 
 const responsive = {
   desktop: {
@@ -75,11 +89,11 @@ const responsive = {
   },
 };
 
-const ServiceCard = ({ title, image, items, link }) => (
-  <Box p={4}>
+const ServiceCard = ({ title, image, items}) => (
+  <Box p={4} paddingBottom={6}>
     <Center py={6}>
       <Box
-        maxW={'110%'}
+        maxW={'85%'}
         w={'full'}
         bg={useColorModeValue('white')}
         boxShadow={'0 4px 6px rgba(0, 0, 0, 0.1)'}
@@ -88,55 +102,40 @@ const ServiceCard = ({ title, image, items, link }) => (
         p={4}
       >
         <Stack textAlign={'center'} p={6} color={useColorModeValue('gray.800', 'white')} align={'center'}>
-          <Text fontSize={'m'} fontWeight={500} bg={useColorModeValue("white")} p={2} px={3} color={"#363795"} rounded={'full'}>
-            {title}
-          </Text>
           <Stack direction={'row'} align={'center'} justify={'center'}>
             <img src={image} alt={title} style={{ borderRadius: '8px', width: '150px', height: '150px' }} />
           </Stack>
+          <Text fontSize={'2xl'} fontWeight={700} bg={useColorModeValue("white")} p={2} px={3} color={"#E67E22"} rounded={'full'}>
+            {title}
+          </Text>
         </Stack>
-        <Box bg={useColorModeValue('gray.50')} px={6} py={10}>
-          <List fontSize={'sm'} color={"gray.600"} spacing={3}>
+        <Box bg={useColorModeValue('gray.50')} px={6}>
+          <List fontSize={'xl'} color={"#111111"} spacing={3} marginBottom={5}>
             {items.map((item, index) => (
               <ListItem key={index}>
-                <ListIcon as={CheckIcon} color="#363795"/>
+                <ListIcon as={CheckIcon} color="#E67E22"/>
                 {item}
               </ListItem>
             ))}
           </List>
-          <Button
-            as="a" 
-            mt={10}
-            w={'full'}
-            bg={'#363795'}
-            color={'white'}
-            rounded={'xl'}
-            _hover={{
-              bg: '#23215D',
-            }}
-            href={link} 
-            target="_blank"  
-            rel="noopener noreferrer"
-          >
-            Place Order
-          </Button>
         </Box>
       </Box>
     </Center>
   </Box>
 );
 
-const Service = ({ deviceType }) => (
-  <Box p={4} >
-    <Stack spacing={4} as={Container} maxW={"6xl"} textAlign={"center"}>
-      <Heading color={"#363795"} fontSize={{ base: "2xl", sm: "4xl" }} fontWeight={"bold"}>
+const Service = forwardRef(({ deviceType }, ref) => (
+  <Box p={4} ref={ref}>
+    <Stack spacing={4} as={Container} maxW={"90%"} textAlign={"center"}>
+      <Heading color={"#E67E22"} fontSize={{ base: "3xl", sm: "4xl" }} fontWeight={"bold"}>
         Our Services
       </Heading>
-      <Text color={"gray.500"} fontSize={{ base: "sm", sm: "lg" }}>
-      We have a wide variety of services which include: Branding, Graphic Design, Printing, Packaging , and other services such as website design, copywriting, consultations.
+      <Text color={"#111111"}  fontSize={{ base: "lg", sm: "xl" }}>
+        We offer a full suite of professional accounting and financial management services to 
+        support sustainable business growth — whether you're operating in Zimbabwe or managing a business remotely from abroad.
       </Text>
     </Stack>
-    <Container maxW={"7xl"} mt={5}>
+    <Container maxW={"90%"} mt={5}>
       <Carousel
         swipeable
         draggable
@@ -158,63 +157,108 @@ const Service = ({ deviceType }) => (
         customLeftArrow={<CustomLeftArrow />}
       >
         <ServiceCard
-          title="Branding Services"
-          image={brand}
+          title="Financial Reporting"
+          image={fr}
           items={[
-            'Brand Strategy',
-            'Logo Design',
-            'Brand Identity',
-            'Brand Guidelines',
-          ]}
-          link="https://wa.me/p/6517977988258120/263788638544"
+            'Accurate financial statements',
+            'Timely financial reports',
+            'Decision-support & insights',
+            'IFRS-compliant reporting',
+            ]}
         />
         <ServiceCard
-          title="Graphic Design Services"
-          image={gd}
+          title="Bookkeeping Services"
+          image={bk}
           items={[
-            'Advertising Materials',
-            'Corporate Stationery',
-            'Label & Sticker Design',
-            'Digital Graphics',
-          ]}
-          link="https://wa.me/p/6561959997227920/263788638544"
+            'Daily transaction recording',
+            'Bank & account reconciliations',
+            'General ledger maintenance',
+            'Audit-ready financials',
+            ]}
         />
         <ServiceCard
-          title="Printing Services"
-          image={printing}
+          title="Compliance & Taxation"
+          image={tax}
           items={[
-            'Digital Printing',
-            'Large Format Printing',
-            'Promotional Materials',
-            'Packaging Printing',
-          ]}
-          link="https://wa.me/p/10078948428844755/263788638544"
+            'ZIMRA registration',
+            'VAT registration & filing',
+            'Tax returns preparation',
+            'Regulatory reporting',
+            ]}
         />
         <ServiceCard
-          title="Packaging Services"
-          image={pkg}
+          title="ZIMRA Representation"
+          image={zimra}
           items={[
-            'Packaging Design',
-            'Custom Packaging ',
-            'Product Labeling',
-            'Packaging Mock-ups',
-          ]}
-          link="https://wa.me/p/6749115131841729/263788638544"
+            'Representation during audits',
+            'Liaison with ZIMRA on behalf',
+            'Issue & dispute resolution',
+            'Expert support for queries',
+            ]}
         />
         <ServiceCard
-          title="Other Services"
-          image={other}
+          title="Auditing Services"
+          image={audit}
           items={[
-            'Website Design',
-            'Marketing Copywriting',
-            'Brand Consultancy',
-            'Social Media Management',
+            'Full statutory audits',
+            'Independent financial reviews',
+            'Internal control assessments',
+            'Compliance verification',
+            ]}
+        />
+        <ServiceCard
+          title="Virtual CFO Services"
+          image={vCFO}
+          items={[
+            'High-level financial strategy',
+            'Budgeting, forecasting',
+            'Business performance analysis',
+            'Diaspora Remote CFO services',
+            ]}
+        />
+        <ServiceCard
+          title="Business Advisory"
+          image={ba}
+          items={[
+            'Budget preparation',
+            'Cash flow management',
+            'Financial planning for startups',
+            'Strategic advisory',
+            ]}
+        />
+        <ServiceCard
+          title="Payroll Services"
+          image={payroll}
+          items={[
+            'Salary processing and payslips',
+            'PAYE and NSSA calculations',
+            'Statutory submissions',
+            'Confidential, timely payroll',
+            ]}
+        />
+        <ServiceCard
+          title="Financial Literacy"
+          image={fl}
+          items={[
+            'Non-finance professionals',
+            'Basic finance concepts',
+            'Budget & report understanding',
+            'Team-wide financial awareness',
+             ]}
+        />
+        <ServiceCard
+          title="Software Training"
+          image={st}
+          items={[
+            'QuickBooks & Pastel training',
+            'Palladium accounting software',
+            'Hands-on practical sessions',
+            'Teams & individuals',
           ]}
-          link="https://wa.me/p/6513211588747915/263788638544"
         />
       </Carousel>
     </Container>
   </Box>
-);
+));
 
 export default Service;
