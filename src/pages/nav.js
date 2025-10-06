@@ -3,12 +3,9 @@ import {
   Box,
   Flex,
   Text,
-  IconButton,
   Button,
   Stack,
   useColorModeValue,
-  useDisclosure,
-  useBreakpointValue
 } from "@chakra-ui/react";
 import logo from '../assets/logos/logo.png';
 

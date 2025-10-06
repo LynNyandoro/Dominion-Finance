@@ -15,7 +15,6 @@ import {
   Heading
 } from '@chakra-ui/react';
 import { CheckIcon } from '@chakra-ui/icons';
-import logo from '../assets/logos/logo.png';
 import React, { forwardRef } from 'react';
 import audit from '../assets/Content/audit.jpeg';
 import ba from '../assets/Content/ba.jpeg';

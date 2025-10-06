@@ -3,8 +3,6 @@
 import {
   Box,
   Stack,
-  Button,
-  Flex,
   Divider,
   chakra,
   Grid,

@@ -1,6 +1,7 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Dominion Finance",
+  "name": "Dominion Financial Management Services",
+  "description": "Professional accounting, tax advisory, and business consulting services in Zimbabwe since 2002. Serving local and international clients with reliable, cost-effective financial solutions.",
   "icons": [
     {
       "src": "favicon.ico",
@@ -20,6 +21,6 @@
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#000000",
+  "theme_color": "#E67E22",
   "background_color": "#ffffff"
 }

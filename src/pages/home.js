@@ -1,6 +1,5 @@
 "use client";
 
-import { useState, useRef } from "react";
 import {
   Container,
   Stack,
@@ -9,8 +8,6 @@ import {
   Heading,
   Text,
   Button,
-  IconButton,
-  createIcon,
   useColorModeValue,
   Icon,
 } from "@chakra-ui/react";

@@ -2,14 +2,11 @@ import React from 'react';
 import {
   Container,
   SimpleGrid,
-  Image,
   Flex,
   Heading,
   Text,
   Stack,
-  Icon,
   useColorModeValue,
-  Box,
 } from "@chakra-ui/react";
 import diaspora from "../assets/Content/Diaspora.jpg";
 

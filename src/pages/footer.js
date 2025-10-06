@@ -1,44 +1,13 @@
 import React, { forwardRef } from "react";
 import {
   Box,
-  Button,
   Container,
   Stack,
   Text,
-  VisuallyHidden,
   useColorModeValue,
 } from "@chakra-ui/react";
 import logo from "../assets/logos/logo.png";
 
-// Logo component
-const Logo = () => (
-  <img
-    src={logo}
-    alt="logo"
-    style={{ borderRadius: "1px", height: "40px" }}
-  />
-);
-
-// Social button component
-const SocialButton = ({ children, label, href }) => (
-  <Button
-    bg="#363795"
-    color="white"
-    rounded="full"
-    w={8}
-    h={8}
-    as="a"
-    href={href}
-    display="inline-flex"
-    alignItems="center"
-    justifyContent="center"
-    transition="background 0.3s ease"
-    _hover={{ bg: "#23215D" }}
-  >
-    <VisuallyHidden>{label}</VisuallyHidden>
-    {children}
-  </Button>
-);
 
 // Footer component
 const Footer = forwardRef((props, ref) => {

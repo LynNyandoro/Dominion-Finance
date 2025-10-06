@@ -10,12 +10,9 @@ import {
   Text,
   Stack,
   Heading,
-  Button,
   Container,
   Box,
-  Icon,
 } from '@chakra-ui/react'
-import { PiQuestion } from "react-icons/pi";
 
 import { ChevronDownIcon } from '@chakra-ui/icons'
 import React from 'react'

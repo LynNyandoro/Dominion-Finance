@@ -4,7 +4,6 @@ import {
   Box,
   Container,
   Flex,
-  Stack,
   Text,
   useColorModeValue,
   Image,
